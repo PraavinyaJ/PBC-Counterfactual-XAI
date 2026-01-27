@@ -42,7 +42,18 @@ In chronic liver disease, risk is rarely yes/no. Clinicians often want:
 - Brier score
 
 # Key results
+| Model | ROC-AUC | Accuracy@0.5 | Brier |
+|---|---:|---:|---:|
+| Gradient Boosting (uncalibrated) | 0.812 | 0.738 | 0.176 |
+| Gradient Boosting (sigmoid calibrated) | 0.812 | 0.726 | 0.186 |
+| Logistic Regression (baseline) | 0.772 | 0.714 | 0.183 |
 
+Cross-Validation Summary (Train+Val, 5-fold mean)
+| Model | ROC-AUC | Accuracy@0.5 | Brier |
+|---|---:|---:|---:|
+| Gradient Boosting (uncalibrated) | 0.840 | 0.776 | 0.155 |
+| Gradient Boosting (sigmoid calibrated) | 0.840 | 0.776 | 0.159 |
+| Logistic Regression (baseline) | 0.823 | 0.752 | 0.168 |
 
 # Visuals
 - Calibration curve (Test)
@@ -64,15 +75,12 @@ Download pbc_clinical_cohort.csv from Kaggle and place it in the project root.
 3.Run the notebook
 jupyter notebook PBC_Counterfactuals_XAI.ipynb
 
-# Future Work
-- External validation: Evaluate on an independent PBC cohort (different site/time period) to test generalization and calibration stability.
-- Threshold selection + operating points: Report sensitivity/specificity (and PPV/NPV) across multiple thresholds instead of fixing 0.5; optionally add decision-curve analysis for clinical utility.
-- More robust probability calibration: Compare sigmoid vs isotonic calibration using repeated CV or cross-fitting to reduce split sensitivity; consider calibration-in-the-loop evaluation.
-- Uncertainty reporting (cleaner than current bootstrap):Bootstrap or cross-fit the *entire* fit + calibration procedure (not just retrain + fixed-val recalibration) so uncertainty bands align better with the reported point estimate.
-- Counterfactual realism upgrades: Add a cost function (penalize large/unrealistic lab shifts), clinician-reviewed constraints, and/or pathway constraints (e.g., linked labs) to reduce “implausible but valid” counterfactuals.
-- Model comparisons:Try stronger tabular baselines (e.g., XGBoost/LightGBM if allowed, or tuned GB/LR pipelines) and report whether improvements are consistent under repeated splits.
-- Fairness and subgroup checks: Audit performance/calibration across clinically relevant subgroups (sex, stage categories) and report any major disparities.
-- Feature engineering + missingness: Model missingness explicitly (missingness indicators) and evaluate whether it improves robustness without introducing leakage.
+# Future Work## Future Work
+- Validate on a new cohort. I want to test the model on an external PBC dataset (or a later time-split) to see if performance and calibration hold up outside this one sample.  
+- Picking thresholds like a clinician would. Report sensitivity/specificity (and PPV/NPV) across a few thresholds instead of hard-coding 0.5, so the model can be tuned for catching more cases vs avoiding false alarms.  
+- Make explanations/uncertainty more robust. I want to improve the counterfactual constraints with clinician review (so the what-if's feel realistic) and tighten the resampling uncertainty so it reflects the full fit and calibration procedure more cleanly.  
+
+
 
 
 
