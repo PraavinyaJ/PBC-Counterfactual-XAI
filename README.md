@@ -77,7 +77,7 @@ Download pbc_clinical_cohort.csv from Kaggle and place it in the project root.
 3. Run the notebook
 jupyter notebook PBC_Counterfactuals_XAI.ipynb
 
-# Future Work## Future Work
+# Future Work
 - Validate on a new cohort. I want to test the model on an external PBC dataset (or a later time-split) to see if performance and calibration hold up outside this one sample.  
 - Picking thresholds like a clinician would. Report sensitivity/specificity (and PPV/NPV) across a few thresholds instead of hard-coding 0.5, so the model can be tuned for catching more cases vs avoiding false alarms.  
 - Make explanations/uncertainty more robust. I want to improve the counterfactual constraints with clinician review (so the what-if's feel realistic) and tighten the resampling uncertainty so it reflects the full fit and calibration procedure more cleanly.  
