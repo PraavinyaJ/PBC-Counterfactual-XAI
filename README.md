@@ -7,7 +7,7 @@ This project builds a binary classifier to predict:
 - Goal: Produce useful risk probabilities (not just labels), and generate counterfactual “what-if” explanations showing what feature changes would move a high-risk case to a lower predicted risk in the model.
 
 # Dataset
-- Source file: [`pbc_clinical_cohort.csv`](https://www.kaggle.com/datasets/homayoonkhadivi/primary-biliary-cirrhosis-pbc-disease-dataset)
+- Source file:(https://www.kaggle.com/datasets/homayoonkhadivi/primary-biliary-cirrhosis-pbc-disease-dataset)
   
 # Clinical Significance: Why does this matter for a patient?
 In chronic liver disease, risk is rarely yes/no. Clinicians often want:
@@ -73,8 +73,8 @@ In chronic liver disease, risk is rarely yes/no. Clinicians often want:
 1. Install dependencies
 pip install -r requirements.txt
 
-2. Download dataset
-Download pbc_clinical_cohort.csv from Kaggle and place it in the project root.
+2. Download dataset:
+ pbc_clinical_cohort.csv from Kaggle and place it in the project root.
 
 3. Run the notebook
 jupyter notebook PBC_Counterfactuals_XAI.ipynb
