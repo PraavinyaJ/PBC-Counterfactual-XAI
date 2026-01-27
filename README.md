@@ -4,7 +4,7 @@
 Primary Biliary Cholangitis (PBC) patients can present with a wide range of lab values and clinical signs.  
 This project builds a binary classifier to predict:
 - Target: `status == 2` vs. others (`status_eq_2`)  
-- Goal: Produce useful risk probabilitiesv(not just labels), and generate counterfactual “what-if” explanations showing what feature changes would move a high-risk case to a lower predicted risk in the model.
+- Goal: Produce useful risk probabilities (not just labels), and generate counterfactual “what-if” explanations showing what feature changes would move a high-risk case to a lower predicted risk in the model.
 
 # Dataset
 - Source file: [`pbc_clinical_cohort.csv`](https://www.kaggle.com/datasets/homayoonkhadivi/primary-biliary-cirrhosis-pbc-disease-dataset)
