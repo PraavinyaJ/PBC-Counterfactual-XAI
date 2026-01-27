@@ -42,18 +42,20 @@ In chronic liver disease, risk is rarely yes/no. Clinicians often want:
 - Brier score
 
 # Key results
-| Model | ROC-AUC | Accuracy@0.5 | Brier |
-|---|---:|---:|---:|
-| Gradient Boosting (uncalibrated) | 0.812 | 0.738 | 0.176 |
-| Gradient Boosting (sigmoid calibrated) | 0.812 | 0.726 | 0.186 |
-| Logistic Regression (baseline) | 0.772 | 0.714 | 0.183 |
 
-Cross-Validation Summary (Train+Val, 5-fold mean)
-| Model | ROC-AUC | Accuracy@0.5 | Brier |
+# (Test Set)
+| Model | ROC-AUC | Accuracy | Brier |
 |---|---:|---:|---:|
-| Gradient Boosting (uncalibrated) | 0.840 | 0.776 | 0.155 |
-| Gradient Boosting (sigmoid calibrated) | 0.840 | 0.776 | 0.159 |
-| Logistic Regression (baseline) | 0.823 | 0.752 | 0.168 |
+| GB (uncalibrated) | 0.812 | 0.738 | 0.176 |
+| GB (calibrated) | 0.812 | 0.726 | 0.186 |
+| Logistic Regression | 0.772 | 0.714 | 0.183 |
+
+# Cross-Validation Summary 
+| Model | ROC-AUC | Accuracy | Brier |
+|---|---:|---:|---:|
+| GB (uncalibrated) | 0.840 | 0.776 | 0.155 |
+| GB (calibrated) | 0.840 | 0.776 | 0.159 |
+| Logistic Regression | 0.823 | 0.752 | 0.168 |
 
 # Visuals
 - Calibration curve (Test)
