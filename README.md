@@ -57,3 +57,12 @@ In chronic liver disease, risk is rarely yes/no. Clinicians often want:
 
 
 
+# Limitations
+- Single dataset and a simple feature set, no external validation.
+- Threshold fixed at 0.5 so accuracy depends on threshold choice.
+- DiCE counterfactuals depend on constraints, and different constraints can change results.
+- The reported bootstrap 2.5–97.5% range is best interpreted as an instability band under retraining and recalibration, not a classical confidence interval for the exact final fitted model.
+
+
+
+
