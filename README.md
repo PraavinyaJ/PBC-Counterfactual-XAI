@@ -70,8 +70,10 @@ Cross-Validation Summary (Train+Val, 5-fold mean)
 # How to Run
 1. Install dependencies
 pip install -r requirements.txt
-2. Download dataset
+
+3. Download dataset
 Download pbc_clinical_cohort.csv from Kaggle and place it in the project root.
+
 3.Run the notebook
 jupyter notebook PBC_Counterfactuals_XAI.ipynb
 
