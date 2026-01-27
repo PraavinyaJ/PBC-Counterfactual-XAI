@@ -43,7 +43,7 @@ In chronic liver disease, risk is rarely yes/no. Clinicians often want:
 
 # Key results
 
-# (Test Set)
+# Test Set
 | Model | ROC-AUC | Accuracy | Brier |
 |---|---:|---:|---:|
 | GB (uncalibrated) | 0.812 | 0.738 | 0.176 |
