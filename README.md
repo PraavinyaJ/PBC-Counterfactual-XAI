@@ -15,7 +15,7 @@ In chronic liver disease, risk is rarely yes/no. Clinicians often want:
 - Trend sensitivity (e.g., worsening bilirubin or protime)
 - Interpretability to support shared decision-making
 
-# Leakage Prevention: How did I ensure the model didn't cheat?
+# Leakage Prevention:
 
 # Split discipline
 - I created a strict Train / Val / Test split once.
