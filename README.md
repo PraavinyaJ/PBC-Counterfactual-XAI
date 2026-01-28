@@ -21,6 +21,12 @@ This project builds a binary classifier to predict:
 - Platelet count often decreases in advanced liver disease due to portal hypertension and splenic sequestration, making it a surrogate marker of disease progression.
 - Albumin reflects liver synthetic reserve and nutritional status, with lower values associated with more advanced disease
 
+# Counterfactual Interpretation (Clinical Logic)
+- Counterfactual explanations in this project are used as model-level “what-if” analyses, not causal recommendations. They highlight which feature changes would move a patient from higher to lower predicted risk according to the trained model, under clinically plausible constraints.
+- Indicators of which physiological dimensions (cholestasis, synthetic function, portal hypertension) are most influential for the model’s risk estimate
+- Tools for hypothesis generation and shared decision-making
+- Not as direct clinical interventions or causal guarantees
+
 # Leakage Prevention:
 
 # Split discipline
