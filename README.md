@@ -10,16 +10,17 @@ This project builds a binary classifier to predict:
 - Source file:(https://www.kaggle.com/datasets/homayoonkhadivi/primary-biliary-cirrhosis-pbc-disease-dataset)
   
 # Clinical Significance: 
-- Primary Biliary Cholangitis (PBC) is a chronic, progressive liver disease in which risk evolves gradually rather than as a binary outcome. Clinicians rarely make decisions based on a single threshold, instead, they monitor risk trajectories, worsening laboratory values, and overall disease progression to guide follow up intensity and treatment escalation.
-- Risk stratification to guide follow-up intensity
-- Trend sensitivity (e.g., worsening bilirubin or protime)
-- Interpretability to support shared decision-making
+Primary Biliary Cholangitis (PBC) is a chronic, progressive liver disease where risk evolves over time rather than as a binary outcome.  Clinicians rarely rely on a single threshold, instead, they monitor trends in labs and clinical signs to guide follow-up intensity and treatment escalation.
+This motivates:
+- risk stratification (probabilities, not just labels)
+- sensitivity to meaningful lab changes (e.g., bilirubin, prothrombin time)
+- interpretability to support shared decision-making
 
 # Feature Significance
 - Bilirubin (bili) is a marker of hepatic excretory function and cholestasis. Rising bilirubin is a core indicator of disease severity and progression in PBC.
 - Prothrombin time (protime) reflects liver synthetic function, as most coagulation factors are produced by the liver. Prolongation of protime indicates impaired hepatic synthesis and worse prognosis.
 - Platelet count often decreases in advanced liver disease due to portal hypertension and splenic sequestration, making it a surrogate marker of disease progression.
-- Albumin reflects liver synthetic reserve and nutritional status, with lower values associated with more advanced disease
+- Albumin reflects liver synthetic reserve and nutritional status, with lower values associated with more advanced disease.
 
 # Counterfactual Interpretation (Clinical Logic)
 - Counterfactual explanations in this project are used as model-level “what-if” analyses, not causal recommendations. They highlight which feature changes would move a patient from higher to lower predicted risk according to the trained model, under clinically plausible constraints.
@@ -28,18 +29,10 @@ This project builds a binary classifier to predict:
 - Not as direct clinical interventions or causal guarantees
 
 # Leakage Prevention:
-
-# Split discipline
-- I created a strict Train / Val / Test split once.
-- Test is touched once at the end for reporting.
-  
-# Preprocessing without leakage
-- Preprocessing stats (sex mode, numeric medians) is fitted only on the fit split.
-- During CV: preprocessing is re-fitted inside each fold on the fold’s training portion only.
-
-# Calibration without leakage
-- The base model is fit on X_fit
-- Calibration is learned on a held-out calibration subset (X_cal)
+- Single Train/Val/Test split (60/20/20). Test set is used once for final reporting.
+- No-preprocessing leakage: imputation stats are fit on training data only (and re-fit within each CV fold).
+- Calibration without leakage: base model is fit on an inner fit split; sigmoid calibration is learned on a held-out calibration split.
+- Cross-validation is run on Train+Val with fold-specific preprocessing and calibration to avoid optimistic estimates.
   
 # Approach:
 
