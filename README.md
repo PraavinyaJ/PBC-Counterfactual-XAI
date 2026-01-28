@@ -9,11 +9,17 @@ This project builds a binary classifier to predict:
 # Dataset
 - Source file:(https://www.kaggle.com/datasets/homayoonkhadivi/primary-biliary-cirrhosis-pbc-disease-dataset)
   
-# Clinical Significance: Why does this matter for a patient?
-In chronic liver disease, risk is rarely yes/no. Clinicians often want:
+# Clinical Significance: 
+- Primary Biliary Cholangitis (PBC) is a chronic, progressive liver disease in which risk evolves gradually rather than as a binary outcome. Clinicians rarely make decisions based on a single threshold, instead, they monitor risk trajectories, worsening laboratory values, and overall disease progression to guide follow up intensity and treatment escalation.
 - Risk stratification to guide follow-up intensity
 - Trend sensitivity (e.g., worsening bilirubin or protime)
 - Interpretability to support shared decision-making
+
+# Feature Significance
+- Bilirubin (bili) is a marker of hepatic excretory function and cholestasis. Rising bilirubin is a core indicator of disease severity and progression in PBC.
+- Prothrombin time (protime) reflects liver synthetic function, as most coagulation factors are produced by the liver. Prolongation of protime indicates impaired hepatic synthesis and worse prognosis.
+- Platelet count often decreases in advanced liver disease due to portal hypertension and splenic sequestration, making it a surrogate marker of disease progression.
+- Albumin reflects liver synthetic reserve and nutritional status, with lower values associated with more advanced disease
 
 # Leakage Prevention:
 
