@@ -1,6 +1,6 @@
 # PBC-Counterfactual-XAI
 
-## SUMMARY
+## Summary
 - **Goal:** Predict high-risk PBC status (**status == 2**) and generate counterfactual “what-if” explanations.
 - **Data:** Kaggle PBC clinical cohort (**n=419**).
 - **Best model:** Gradient Boosting (Test **ROC-AUC 0.812**, **Brier 0.176**).
