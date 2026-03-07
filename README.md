@@ -21,7 +21,7 @@ This project builds a binary classifier to predict:
 
 ---
 
-## Approach (high level)
+## Approach 
 - Build baseline and non-linear models for **risk stratification** (probabilities).
 - Evaluate both **ranking performance** (ROC-AUC) and **probability quality** (Brier + calibration curve).
 - Generate **counterfactual explanations** under **clinically plausible constraints**.
